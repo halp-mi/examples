@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * @param string $route_name
+ * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
+ *
+ * @return string/bool
+ */
+function mbcemployee_help($route_name, $route_match) {
+  return mbccommon_help($route_name, $route_match);
+}
+
+/**
+ * Implements hook_user_view_alter()
+ * @param array $build
+ * @param \Drupal\Core\Session\AccountInterface $account
+ * @param $display
+ */
+function mbcemployee_user_view_alter(array &$build, $account, $display) {
+  unset($build['member_for']);
+}
+
+/**
+ * Implements hook_user_login()
+ * @param \Drupal\Core\Session\AccountInterface $account
+ */
+function mbcemployee_user_login($account) {
+  /** @var \Drupal\mbcemployee\Access\MBCEmployeeUserLogin $MBCEmployeeLogin */
+  $MBCEmployeeLogin = \Drupal::service('mbcemployee.login');
+  $MBCEmployeeLogin->checkStatus();
+}
+
+/**
+ * Implements hook_menu_alter().
+ * @param array $variables
+ */
+function mbcemployee_link_alter(array &$variables) {
+
+  /** @var \Drupal\Core\Url $url */
+  $url = $variables['url'];
+
+  if ($url->isExternal()) {
+    return;
+  }
+  else {
+    $route_name = $url->getRouteName();
+    if ($route_name != 'user.page') {
+      return;
+    }
+    else if ($variables['text'] == 'My account') {
+      $variables['text'] = t('@text', ['@text' => 'Application']);
+    }
+  }
+}

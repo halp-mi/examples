@@ -1,0 +1,9 @@
+name: MBC Employee
+type: module
+description: MBC Employee (User) Registration
+dependencies:
+  - mbccommon
+  - mbccompany
+package: MBC Account
+core: 8.x
+version: '8.x'

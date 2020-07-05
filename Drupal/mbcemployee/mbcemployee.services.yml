@@ -1,0 +1,18 @@
+services:
+  mbcemployee.login:
+    class: Drupal\mbcemployee\Services\MBCEmployeeUserLogin
+    arguments: ['@mbccommon.user', '@mbccommon.fls', '@mbcemployee.db.employee']
+
+  mbcemployee.db.employee:
+    class: Drupal\mbcemployee\Database\MBCEmployeeDb
+
+  mbcemployee.route_subscribe:
+    class: Drupal\mbcemployee\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+      -
+  mbcemployee.access_checker:
+    class: Drupal\mbcemployee\Access\MBCEmployeeAccessCheck
+    arguments: ['@current_user']
+    tags:
+      - { name: access_check, applies_to: _mbcemployee_access_check }

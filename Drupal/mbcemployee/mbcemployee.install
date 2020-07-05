@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ * See mbccommon.install
+ */
+function mbcemployee_schema() {
+
+  $schema = mbc_createDB('mbcemployee');
+
+  return $schema;
+}
+
+function mbcemployee_install() {
+  mbc_installPermission('mbcemployee');
+
+  $ConfigFactory = \Drupal::configFactory();
+
+  // Override Drupal's User Module requiring email verification
+  $settings = $ConfigFactory->getEditable('user.settings');
+  $settings->set('verify_mail', false);
+  $settings->set('notify.status_activated', false);
+  $settings->save();
+
+  // Override default email message
+  $settings = $ConfigFactory->getEditable('user.mail');
+  $settings->set('password_reset.body', "[user:display-name],\n\nA request to reset the password for your account has been made at [site:name].\n\nYou may now log in by cut & paste the following link into your browser:\n\n[user:one-time-login-url]\n\nThis link can only be used once to log in and will lead you to a page where you can set your password. It expires after one day and nothing will happen if it's not used.\n\n--  [site:name] team");
+  $settings->save();
+}
+
+function mbcemployee_uninstall() {
+  mbc_deleteDB('mbcemployee');
+}

@@ -1,0 +1,57 @@
+mbcemployee.menu:
+  path: '/company-user/menu/{action}/{mbc_name_type}/{mbc_id}'
+  defaults:
+    _controller: '\Drupal\mbcemployee\Controller\MBCEmployeeController::mbcCommonFormResolver'
+    action: 'main'
+    mbc_name_type: ''
+    mbc_id: ''
+  requirements:
+    _mbccommon_access_check: 'TRUE'
+
+mbcemployee.assign:
+  path: '/company-user/assign/{action}/{mbc_name_type}/{mbc_id}'
+  defaults:
+    _controller: '\Drupal\mbcemployee\Controller\MBCEmployeeController::mbcCommonFormResolver'
+    action: 'role'
+    mbc_name_type: ''
+    mbc_id: ''
+  requirements:
+    _mbccommon_access_check: 'TRUE'
+
+mbcemployee.register:
+  path: '/user/registration'
+  defaults:
+    _form: '\Drupal\mbcemployee\Form\MBCEmployeeFormRegistration'
+    _title: 'User Registration'
+  requirements:
+    _access: 'TRUE'
+
+mbcemployee.employee:
+  path: '/company-user/view/{action}/{mbc_name_type}/{mbc_id}'
+  defaults:
+    _controller: '\Drupal\mbcemployee\Controller\MBCEmployeeController::mbcCommonFormResolver'
+    action: 'view_list'
+    mbc_name_type: ''
+    mbc_id: ''
+  requirements:
+    _mbccompany_access_check: 'TRUE'
+
+mbcemployee.traverse:
+  path: '/company-user/list/{action}/{mbc_name_type}/{mbc_id}/{mbc_next_name_type}/{mbc_next_id}'
+  defaults:
+    _controller: '\Drupal\mbcemployee\Controller\MBCEmployeeController::mbcCommonFormResolver'
+    action: 'add_employee'
+    mbc_name_type: ''
+    mbc_id: ''
+    mbc_next_name_type: ''
+    mbc_next_id: ''
+  requirements:
+    _mbcemployee_access_check: 'TRUE'
+
+mbcemployee.admin:
+  path: '/admin/mbc/company_role/{action}/{mbc_name_type}/{mbc_id}'
+  defaults:
+    _controller: '\Drupal\mbcemployee\Controller\MBCEmployeeController::mbcCommonFormResolver'
+    action: 'company'
+  requirements:
+    _mbccompany_access_check: 'TRUE'

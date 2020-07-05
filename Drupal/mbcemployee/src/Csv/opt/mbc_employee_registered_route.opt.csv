@@ -1,0 +1,10 @@
+id     ,route               ,action      ,status,name                ,description                  ,weight,min_form_type,max_form_type,compare_type
+1100500,mbcemployee.menu    ,view        ,1     ,User Manager Menu   ,Manage your employee account.,110   ,0            ,3            ,2
+1101500,mbcemployee.employee,view_list   ,1     ,View Employees      ,View & manage your employees.,110   ,0            ,4            ,1
+1103500,mbcemployee.employee,add         ,1     ,Create Employee     ,Create an employee account.  ,110   ,0            ,3            ,2
+1104000,mbcemployee.employee,edit        ,1     ,Edit Employee Info  ,Edit employee information.   ,110   ,4            ,4            ,3
+1102000,mbcemployee.assign  ,role        ,1     ,User Role Assignment,Manage user roles.           ,110   ,0            ,4            ,2
+1102500,mbcemployee.assign  ,manager     ,1     ,Assign Manager      ,Assign a manager.            ,110   ,0            ,4            ,2
+1103000,mbcemployee.assign  ,admin       ,1     ,Assign Admin        ,Assign a user administrator. ,110   ,0            ,4            ,2
+1103501,mbcemployee.traverse,add_employee,1     ,Create Employee     ,Create an employee account.  ,110   ,0            ,3            ,2
+1104000,mbcemployee.admin   ,company     ,1     ,Company             ,                             ,110   ,0            ,0            ,3
