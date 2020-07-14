@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - examplemodule
+  theme:
+    - example
+id: usersinfoblock
+theme: example
+region: main_navigation
+weight: -7
+provider: null
+plugin: example_user_info_block
+settings:
+  id: example_user_info_block
+  label: 'User''s Info Block'
+  provider: example
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,86 @@
+{% set mainNavClass = "example-menu example-menu-container md left-fixed closed" %}
+
+<div id="wrapper-header" class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="one columns example-nav left">
+            <span class=" example-ui-target-menu example-pointer" data-example-target="#example-main-navigation">
+                <i class="material-icons example-menu-icon hamburger">menu</i>
+                Menu
+            </span>
+                <div id="example-main-navigation" class="{{ mainNavClass }}">
+                    {{ page.main_navigation }}
+                    <i data-example-target="example-main-navigation"
+                       class="example-menu-icon closed example-menu-close material-icons right example-pointer">close</i>
+                </div>
+            </div>
+
+            <div class="eight columns">
+                {{ page.site_branding }}
+            </div>
+
+            <div class="three columns right" style="position: relative">
+                <i class="material-icons example-ui-target-menu example-menu-icon hamburger example-pointer"
+                   data-example-target="#example-account-menu">account_circle</i>
+                <div id="example-account-menu" class="example-drop-menu">
+                    {{ page.account }}
+                </div>
+
+                {% if page.right_navigation %}
+                    <i class="material-icons example-ui-target-menu example-menu-icon hamburger example-pointer"
+                       data-example-target="#example-right-navigation">help_outline</i>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="row">
+            {{ page.header }}
+        </div>
+    </div>
+</div>
+
+{% if page.right_block %}
+    <div class="container">
+        <div class="row">
+            <div id="page-content" class="nine columns">
+                {{ page.content }}
+            </div>
+
+            <div class="three columns">
+                {{ page.right_block }}
+            </div>
+        </div>
+    </div>
+{% elseif page.content %}
+    <div id="page-content" class="container">
+        <div class="row">
+            <div class="twelve columns">
+                {{ page.content }}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% if page.right_navigation %}
+    <div class="container">
+        <div class="row">
+            <div id="example-right-navigation" class="example-menu example-menu-container right-fixed closed md">
+                <i class="material-icons example-menu-icon example-menu-close closed example-menu-icons right"
+                data-example-target="example-right-navigation"
+                >close</i>
+                {{ page.right_navigation }}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% if page.footer %}
+    <footer class="container-fluid example">
+        <div class="container">
+            {{ page.footer }}
+        </div>
+    </footer>
+{% endif %}
+
+{{ attach_library('example/global-styling') }}
+{{ attach_library('example/global-styling-js') }}

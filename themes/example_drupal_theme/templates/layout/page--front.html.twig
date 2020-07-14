@@ -1,0 +1,125 @@
+{{ attach_library('example/global-styling') }}
+{{ attach_library('example/card') }}
+
+<div id="wrapper-header" class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="one columns example-nav left">
+            <span class=" example-ui-target-menu example-pointer" data-example-target="#example-main-navigation">
+                <i class="material-icons example-menu-icon hamburger">menu</i>
+                Menu
+            </span>
+                <div id="example-main-navigation" class="example-menu example-menu-container md left-fixed closed">
+                    {{ page.main_navigation }}
+
+                    <i data-example-target="example-main-navigation"
+                       class="example-menu-icon closed example-menu-close material-icons right example-pointer">close</i>
+                </div>
+            </div>
+            <div class="eight columns">
+                {{ page.site_branding }}
+            </div>
+
+            <div class="three columns right" style="position: relative">
+                <i class="material-icons example-ui-target-menu example-menu-icon hamburger example-pointer"
+                   data-example-target="#example-account-menu">account_circle</i>
+                <div id="example-account-menu" class="example-drop-menu">
+                    {{ page.account }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            {{ page.header }}
+        </div>
+    </div>
+</div>
+
+<div id="wrapper-example-dropdown-menu" class="section-vmargin">
+    <div class="container">
+        <div class="row">
+            <div class="example-drop-menu example-menu red">
+                <ul>
+                    {% for key,ul in exampleMenu %}
+                        <li><a><span>{{ key }}</span></a>
+                            <ul>
+                                {% for id,info in ul %}
+                                    <li>
+                                        <a href="{{ info.url }}" data-featherlight="iframe">
+                                        <span>
+                                            <img style="height: 3rem; width: 3rem" src="{{ info.img }}"
+                                                 alt="{{ info.name }}"/>
+                                            {{ info.name }}
+                                        </span>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if exampleSlider %}
+    <div class="container-fluid">
+        <div id="slider">
+            <div class="slider-responsive">
+                {% for key,info in exampleSlider %}
+                    <div class="example-card example-text-center">
+                        <a title="{{ info.description }}" class="example-menu-item example-menu-item-first"
+                           href="{{ info.url }}"></a>
+                        <img data-lazy="{{ info.img }}" class="example-card-icon"/>
+                        <p>{{ info.name }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% if page.right_block %}
+    <div id="page-content" class="container">
+        <div class="row">
+            <div class="eight columns">
+                {{ page.content }}
+            </div>
+            <div class="four columns">
+                {{ page.right_block }}
+            </div>
+        </div>
+    </div>
+{% elseif page.content %}
+    <div class="container">
+        <div class="row">
+            <div class="twelve columns">
+                {{ page.content }}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+<div class="container">
+    <div class="row">
+        <div id="example-right-navigation" class="example-menu example-menu-container md right-fixed closed">
+            {{ page.right_navigation }}
+        </div>
+    </div>
+</div>
+
+{% if page.footer %}
+    <footer class="container-fluid example">
+        <div class="container">
+            {{ page.footer }}
+        </div>
+
+        <p class="copyright">&copy;{{ "now"|date("Y") }} Magic Bancorp</p>
+    </footer>
+{% endif %}
+
+{{ attach_library('example/global-styling-js') }}
+{{ attach_library('example/slider') }}
+{{ attach_library('example/featherlight') }}

@@ -1,0 +1,38 @@
+<div id="wrapper-header" class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="one columns example-nav left">
+            <span class=" example-ui-target-menu example-pointer" data-example-target="#example-main-navigation">
+                <i class="material-icons example-menu-icon hamburger">menu</i>
+                Menu
+            </span>
+                <div id="example-main-navigation" class="example-menu example-menu-container md left-fixed closed">
+                    {{ page.main_navigation }}
+
+                    <i data-example-target="example-main-navigation"
+                       class="example-menu-icon closed example-menu-close material-icons right example-pointer">close</i>
+                </div>
+            </div>
+            <div class="eight columns">
+                {{ page.site_branding }}
+            </div>
+
+            <div class="three columns right" style="position: relative">
+                <i class="material-icons example-ui-target-menu example-menu-icon hamburger example-pointer"
+                   data-example-target="#example-account-menu">account_circle</i>
+                <div id="example-account-menu" class="example-drop-menu">
+                    {{ page.account }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            {{ page.header }}
+        </div>
+    </div>
+</div>
+
+{{ page.content }}
+
+{{ attach_library('magicbancorp/global-styling') }}
+{{ attach_library('magicbancorp/global-styling-js') }}

@@ -1,0 +1,43 @@
+<div class="layout-container container">
+    <main role="main">
+        <a id="main-content" tabindex="-1"></a>
+        <div class="layout-content">
+            <div ng-app="pageBuilderApp">
+                {% verbatim %}
+                <div ng-controller="PageControllerMain" ng-init="initApp()" class="row">
+                    <div class="right-canvas-wrapper col-sm-12 col-md-12">
+                        <div class="right-canvas-center row">
+                            <div class="main-canvas col-sm-12 col-md-12"
+                            style="background-color: {{currentBgColor}};
+                            background-image: url('{{currentBgImage}}')">
+                                <div class="gridstack-area">
+                                    <div gridstack class="grid-stack grid-stack-24 grid1" nid="{{nid}}" options="options"
+                                        on-change="onChange(event,items)" on-drag-start="onDragStart(event,ui)"
+                                        on-drag-stop="onDragStop(event,ui)" on-resize-start="onResizeStart(event,ui)"
+                                        on-resize-stop="onResizeStop(event,ui)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endverbatim %}
+            </div>
+        </div>
+    </main>
+</div>
+
+{{ attach_library('example/jquery.ui') }}
+{{ attach_library('example/videosharing') }}
+{{ attach_library('example/uiBootstrap') }}
+{{ attach_library('example/ng_smart_table') }}
+{{ attach_library('example/ng_text') }}
+{{ attach_library('example/angularjs') }}
+{{ attach_library('example/angular_sanitize') }}
+{{ attach_library('example/jquery-scrollbar') }}
+{{ attach_library('example/angular_dnd_lists') }}
+{{ attach_library('example/lodash') }}
+{{ attach_library('example/gridstack_view') }}
+{{ attach_library('example/touchPunch') }}
+{{ attach_library('example/jquery-minicolors') }}
+{{ attach_library('example/pagebuilder') }}

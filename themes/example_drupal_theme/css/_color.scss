@@ -1,0 +1,77 @@
+$darkA: #333333;
+$darkB: #efefef;
+$darkC: #000000;
+$darkD: #6b6b6b;
+
+$lightA: #efefef;
+$lightB: #e6e6e6;
+$lightC: #ffffff;
+$lightD: #efefef;
+
+$redA: #f44336;
+$redB: #960000;
+$redC: #aa3939;
+$redD: #aa6060;
+
+$greenA: #43d1af;
+$greenB: #30c29e;
+$greenC: #2ebc99;
+$greenD: #2ecc88;
+
+$blueA: #4484c1;
+$blueB: #3772aa;
+$blueC: #337ab7;
+$blueD: #77c9d4;
+
+$mutedA: #d5d5d5;
+$mutedB: #96858f;
+$mutedC: #6d7993;
+$mutedD: #9099a2;
+
+$pastelA: #fedcd2;
+$pastelB: #8fd8d2;
+$pastelC: #ffffff;
+$pastelD: #df744a;
+$pastelE: #dcb239;
+
+$helpColor: orange;
+
+@mixin bgSetA {
+    &.dark { background-color: $darkA; color: $darkB; }
+    &.light { background-color: $lightA; color: $darkA; }
+    &.red { background-color: $redA; color: $lightC; }
+    &.green { background-color: $greenA; color: $lightC; }
+    &.blue { background-color: $blueA; color: $lightC; }
+    &.muted { background-color: $mutedA; color: $darkA; }
+    &.pastel { background-color: $pastelA; color: $darkA; }
+}
+
+@mixin bgSetB {
+    &.dark { background-color: $darkB; }
+    &.light { background-color: $lightB; }
+    &.red { background-color: $redB; }
+    &.green { background-color: $greenB; }
+    &.blue { background-color: $blueB; }
+    &.muted { background-color: $mutedB; }
+    &.pastel { background-color: $pastelB; }
+}
+
+@mixin bgSetC {
+    &.dark { background-color: $darkC; }
+    &.light { background-color: $lightC; }
+    &.red { background-color: $redC; }
+    &.green { background-color: $greenC; }
+    &.blue { background-color: $blueC; }
+    &.muted { background-color: $mutedC; }
+    &.pastel { background-color: $pastelC; }
+}
+
+@mixin bgSetD {
+    &.dark { background-color: $darkD; }
+    &.light { background-color: $lightD; }
+    &.red { background-color: $redD; }
+    &.green { background-color: $greenD; }
+    &.blue { background-color: $blueD; }
+    &.muted { background-color: $mutedD; }
+    &.pastel { background-color: $pastelD; }
+}

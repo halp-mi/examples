@@ -1,0 +1,43 @@
+global-styling:
+  version: 1.x
+  css:
+    layout:
+      libraries/normalize.min.css: { minified: true }
+      libraries/skeleton/skeleton.css: { }
+      'https://fonts.googleapis.com/icon?family=Material+Icons': { type: external }
+      'https://fonts.googleapis.com/css?family=Droid+Sans': { type: external }
+    component:
+      'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css': { type: external, minified: true }
+      css/global.min.css: { minified: true }
+      css/components/animations.min.css: { minified: true }
+      css/components/example-color.min.css: { minified: true }
+      css/components/btn-color.min.css: { minified: true }
+      css/components/details.min.css: { minified: true }
+      css/components/example-help.min.css: { minified: true }
+      css/components/file-upload.css: { minified: true }
+      css/components/pager.min.css: { minified: true }
+      css/components/modal.min.css: { minified: true }
+      css/components/password-strength.min.css: { minified: true }
+    theme:
+      css/components/menu/example-local-tasks.menu.min.css: { minified: true }
+      css/magicbancorp.min.css: { minified: true }
+      css/ajax.min.css: { minified: true }
+      css/scrollbar.min.css: { minified: true }
+  js:
+    libraries/prefix-free.min.js: { minified: true, attributes: { defer: true } }
+
+global-styling-js:
+  version: 1.x
+  css:
+    libraries/jPushMenu/css/jPushMenu.min.css: { minified: true }
+  js:
+    libraries/jquery.steps.min.js: { minified: true }
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/jquery.form
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+
+

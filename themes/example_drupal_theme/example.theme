@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ * Enable to override page template by the content type
+ */
+function magicbancorp_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $content_type = $node->bundle();
+    $suggestions[] = 'page__' . $content_type;
+  }
+}
+
+/**
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+function example_form_user_login_form_alter(&$form, $form_state, $form_id) {
+
+  // Password field
+  $form['pass'] = [
+    '#type' => 'password',
+    '#title' => t('Password'),
+    '#placeholder' => t('Password'),
+  ];
+
+  // Username Field
+  $form['name'] = [
+    '#type' => 'textfield',
+    '#title' => t('Username'),
+    '#placeholder' => t('Login ID: example@domain.com'),
+  ];
+}
+
+function supportedBrowser() {
+
+  $user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+  if (strpos($user_agent, 'Chrome') !== FALSE) {
+    return TRUE;
+  }
+  else {
+    return strpos($user_agent, 'Firefox') !== FALSE;
+  }
+ }
+}

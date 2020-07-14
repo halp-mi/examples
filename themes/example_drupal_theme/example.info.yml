@@ -1,0 +1,16 @@
+name: Example
+type: theme
+description: A clean design maximizing workspace.
+package: example
+core: 8.x
+regions:
+  header: Header
+  content: Content
+  site_branding: Site-Branding
+  account: Account
+  main_navigation: Navigation
+  right_block: Right Block
+  right_navigation: Right Navigation Menu
+  footer: Footer
+libraries:
+  - core/jquery

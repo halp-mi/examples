@@ -1,0 +1,151 @@
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+input {
+	border-radius: 0;
+}
+
+li {
+	&:hover i {
+		animation-name: animate-spin;
+		animation-duration: 1s;
+		animation-iteration-count: 1;
+	}
+
+	a:hover {
+		cursor: pointer !important;
+	}
+}
+
+a:hover { cursor: pointer !important; }
+
+input, select {
+	margin-bottom: 0;
+	max-width: 100%;
+	background: #fff;
+}
+
+details {
+	&:focus summary { border: none; }
+	&.form-item {
+		margin: 5px 0 5px 0;
+	}
+}
+
+fieldset {
+	border-radius: 5px 5px;
+	padding: 10px 10px;
+}
+
+img {
+	max-width: 100%;
+}
+
+.description {
+	font-size: 85%;
+	font-style: italic;
+}
+
+input[disabled] {
+	opacity: .6;
+	background-color: darkgrey;
+}
+
+.js-form-item {
+	margin-bottom: 5px;
+}
+
+.form-item .description {
+	display: block;
+}
+
+/* Radio Buttons */
+.js-form-type-radio input,
+.js-form-type-radio label {
+	padding: 0;
+	margin: 0;
+	display: inline;
+}
+
+.js-form-type-radio label {
+	margin-left: 5px;
+}
+
+/* Check Boxes */
+.js-form-type-checkbox {
+	display: block;
+}
+
+.js-form-type-checkbox input,
+.js-form-type-checkbox label {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+}
+
+.js-form-type-checkbox label {
+	margin-left: 5px;
+}
+
+summary {
+	margin-bottom: 5px;
+	font-variant: small-caps;
+
+	/* Hide the marker completely. */
+	&::-webkit-details-marker {
+		display: none;
+	}
+}
+
+.form-vertical-tabs > div {
+	animation: sweep-left .25s ease-in;
+}
+
+.region-account *,
+.region-site-branding {
+	animation: appear 1.5s ease-in;
+}
+
+.form-tabs {
+	animation: sweep-bottom 1s ease-in;
+}
+
+@keyframes sweep-left {
+	0% { margin-left: -10%; }
+	100% { margin-left: 0; }
+}
+
+@keyframes appear {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@keyframes sweep-bottom {
+	0% { opacity: 0; margin-bottom: -10%; }
+	100% { opacity: 1; margin-bottom: 0; }
+}
+
+table {
+	width: 100%;
+
+	tr td {
+		&:first-child { padding-left: 1%; }
+		&:last-child { padding-right: 1%; }
+	}
+}
+
+.ui-widget-overlay {
+	background: #000;
+	opacity: .8;
+}
+
+.ui-dialog {
+	z-index: 1000;
+}
+
+.row {
+	margin-left: 0;
+	margin-right: 0;
+}
